@@ -1,3 +1,6 @@
 1.- ¿Definición de eventos en fichero a parte?
 
 2.- ¿Tracker event como interface o definirla directamente?
+
+3.- Id de evento: Entendemos que se refiere al enum que define cada tipo de evento, necesario para la polimorfia de la cola para cuando se ejecuten los métodos de las subclases
+	pero no haría falta también el nº que representa el evento? si es el 1, el 2, el 5.000...

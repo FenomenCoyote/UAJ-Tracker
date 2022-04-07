@@ -163,7 +163,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\TrackerTest\DirtyUtensilsAttackEvent.cpp" />
+    <ClCompile Include="..\..\Source\TrackerTest\DishFinishedEvent.cpp" />
+    <ClCompile Include="..\..\Source\TrackerTest\GameEvent.cpp" />
+    <ClCompile Include="..\..\Source\TrackerTest\IngredientDespawnEvent.cpp" />
+    <ClCompile Include="..\..\Source\TrackerTest\IngredientKillEvent.cpp" />
     <ClCompile Include="..\..\Source\TrackerTest\Main.cpp" />
+    <ClCompile Include="..\..\Source\TrackerTest\UtensilBecomesDirtyEvent.cpp" />
+    <ClCompile Include="..\..\Source\TrackerTest\UtensilCleanEvent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\TrackerTest\DirtyUtensilsAttackEvent.h" />
+    <ClInclude Include="..\..\Source\TrackerTest\DishFinishedEvent.h" />
+    <ClInclude Include="..\..\Source\TrackerTest\GameEvent.h" />
+    <ClInclude Include="..\..\Source\TrackerTest\IngredientDespawnEvent.h" />
+    <ClInclude Include="..\..\Source\TrackerTest\IngredientKillEvent.h" />
+    <ClInclude Include="..\..\Source\TrackerTest\UtensilBecomesDirtyEvent.h" />
+    <ClInclude Include="..\..\Source\TrackerTest\UtensilCleanEvent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

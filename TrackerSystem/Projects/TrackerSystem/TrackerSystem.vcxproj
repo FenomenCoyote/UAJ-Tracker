@@ -19,13 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\TrackerSystem\DirtyUtensilsAttackEvent.h" />
-    <ClInclude Include="..\..\Source\TrackerSystem\DishFinishedEvent.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\FilePersistance.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\framework.h" />
-    <ClInclude Include="..\..\Source\TrackerSystem\GameEvent.h" />
-    <ClInclude Include="..\..\Source\TrackerSystem\IngredientDespawnEvent.h" />
-    <ClInclude Include="..\..\Source\TrackerSystem\IngredientKillEvent.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\IPersistance.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\ISerializer.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\JsonSerializer.h" />
@@ -39,16 +34,9 @@
     <ClInclude Include="..\..\Source\TrackerSystem\Test.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\Tracker.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\TrackerEvent.h" />
-    <ClInclude Include="..\..\Source\TrackerSystem\UtensilBecomesDirtyEvent.h" />
-    <ClInclude Include="..\..\Source\TrackerSystem\UtensilCleanEvent.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\TrackerSystem\DirtyUtensilsAttackEvent.cpp" />
-    <ClCompile Include="..\..\Source\TrackerSystem\DishFinishedEvent.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\FilePersistance.cpp" />
-    <ClCompile Include="..\..\Source\TrackerSystem\GameEvent.cpp" />
-    <ClCompile Include="..\..\Source\TrackerSystem\IngredientDespawnEvent.cpp" />
-    <ClCompile Include="..\..\Source\TrackerSystem\IngredientKillEvent.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\JsonSerializer.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\LevelEndEvent.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\LevelQuitEvent.cpp" />
@@ -65,8 +53,6 @@
     <ClCompile Include="..\..\Source\TrackerSystem\Test.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\Tracker.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\TrackerEvent.cpp" />
-    <ClCompile Include="..\..\Source\TrackerSystem\UtensilBecomesDirtyEvent.cpp" />
-    <ClCompile Include="..\..\Source\TrackerSystem\UtensilCleanEvent.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

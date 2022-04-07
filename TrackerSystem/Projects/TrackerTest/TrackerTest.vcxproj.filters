@@ -13,10 +13,60 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\AnimalCookingEvents">
+      <UniqueIdentifier>{e7de78db-217e-4110-bb43-bcbc7cd905ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\AnimalCookingEvents">
+      <UniqueIdentifier>{88fffa44-9ec9-4b6b-b619-3c3a049ca10d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\TrackerTest\Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerTest\DirtyUtensilsAttackEvent.cpp">
+      <Filter>Archivos de origen\AnimalCookingEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerTest\DishFinishedEvent.cpp">
+      <Filter>Archivos de origen\AnimalCookingEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerTest\IngredientDespawnEvent.cpp">
+      <Filter>Archivos de origen\AnimalCookingEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerTest\IngredientKillEvent.cpp">
+      <Filter>Archivos de origen\AnimalCookingEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerTest\UtensilBecomesDirtyEvent.cpp">
+      <Filter>Archivos de origen\AnimalCookingEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerTest\UtensilCleanEvent.cpp">
+      <Filter>Archivos de origen\AnimalCookingEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerTest\GameEvent.cpp">
+      <Filter>Archivos de origen\AnimalCookingEvents</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\TrackerTest\UtensilBecomesDirtyEvent.h">
+      <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerTest\UtensilCleanEvent.h">
+      <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerTest\DirtyUtensilsAttackEvent.h">
+      <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerTest\DishFinishedEvent.h">
+      <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerTest\GameEvent.h">
+      <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerTest\IngredientDespawnEvent.h">
+      <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerTest\IngredientKillEvent.h">
+      <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

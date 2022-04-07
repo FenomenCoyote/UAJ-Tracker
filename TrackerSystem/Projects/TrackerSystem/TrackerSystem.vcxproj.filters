@@ -49,11 +49,11 @@
     <Filter Include="Archivos de encabezado\Events\TrackerEvents">
       <UniqueIdentifier>{f7a718fd-1b1c-42e0-9e6a-5cbca0c92e6e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Events\GameEvents">
-      <UniqueIdentifier>{419e2121-ed6b-4ed0-9071-9b1583c2e182}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Events\GameEvents">
+    <Filter Include="Archivos de origen\Events\GenericGameEvents">
       <UniqueIdentifier>{630325f7-b266-41bf-a56e-3bdc09c4f0a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Events\GenericGameEvents">
+      <UniqueIdentifier>{419e2121-ed6b-4ed0-9071-9b1583c2e182}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,35 +90,14 @@
     <ClInclude Include="..\..\Source\TrackerSystem\SessionEndEvent.h">
       <Filter>Archivos de encabezado\Events\TrackerEvents</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\DirtyUtensilsAttackEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\DishFinishedEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\GameEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\IngredientDespawnEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\IngredientKillEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\TrackerSystem\LevelEndEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+      <Filter>Archivos de encabezado\Events\GenericGameEvents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TrackerSystem\LevelQuitEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+      <Filter>Archivos de encabezado\Events\GenericGameEvents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TrackerSystem\LevelStartEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\UtensilBecomesDirtyEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\UtensilCleanEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+      <Filter>Archivos de encabezado\Events\GenericGameEvents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TrackerSystem\SessionStartEvent.h">
       <Filter>Archivos de encabezado\Events\TrackerEvents</Filter>
@@ -149,35 +128,14 @@
     <ClCompile Include="..\..\Source\TrackerSystem\SessionStartEvent.cpp">
       <Filter>Archivos de origen\Events\TrackerEvents</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerSystem\DirtyUtensilsAttackEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerSystem\DishFinishedEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerSystem\GameEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerSystem\IngredientDespawnEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerSystem\IngredientKillEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\LevelEndEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
+      <Filter>Archivos de origen\Events\GenericGameEvents</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\LevelQuitEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
+      <Filter>Archivos de origen\Events\GenericGameEvents</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\LevelStartEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerSystem\UtensilBecomesDirtyEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerSystem\UtensilCleanEvent.cpp">
-      <Filter>Archivos de origen\Events\GameEvents</Filter>
+      <Filter>Archivos de origen\Events\GenericGameEvents</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\TrackerEvent.cpp">
       <Filter>Archivos de origen\Events\TrackerEvents</Filter>
