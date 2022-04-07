@@ -9,8 +9,9 @@ TrackerEvent::~TrackerEvent()
 {
 }
 
-bool TrackerEvent::toJson()
+std::string TrackerEvent::toJson()
 {
+	return "";
 }
 
 int TrackerEvent::getTimeStamp() const

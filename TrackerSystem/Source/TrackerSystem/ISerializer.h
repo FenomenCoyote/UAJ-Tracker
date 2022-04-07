@@ -1,9 +1,12 @@
 #pragma once
-#include <iostream>
-class Test
+#include <string>
+
+class TrackerEvent;
+
+class ISerializer
 {
 public:
 
-	static void hola() { std::cout << "hola"; }
+	virtual std::string serialize(TrackerEvent* e) = 0;
 };
 

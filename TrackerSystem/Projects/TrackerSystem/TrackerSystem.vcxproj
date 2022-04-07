@@ -39,6 +39,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Source\TrackerSystem\FilePersistance.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\GameEvent.cpp" />
+    <ClCompile Include="..\..\Source\TrackerSystem\IPersistance.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\JsonSerializer.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\LevelEndEvent.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\LevelQuitEvent.cpp" />

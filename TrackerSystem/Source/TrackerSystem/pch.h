@@ -8,6 +8,4 @@
 #define PCH_H
 
 // agregue aquí los encabezados que desea precompilar
-#include "framework.h"
-#include "Test.h"
 #endif //PCH_H

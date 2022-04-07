@@ -21,7 +21,7 @@ class TrackerEvent {
 public:
 	TrackerEvent();
 	~TrackerEvent();
-	bool toJson();
+	std::string toJson();
 	
 	inline int getTimeStamp() const;
 	inline unsigned long int getUserId() const;

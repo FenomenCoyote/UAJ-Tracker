@@ -1,2 +1,9 @@
 #include "pch.h"
-#include "Test.h"
+
+#include "JsonSerializer.h"
+#include "TrackerEvent.h"
+
+std::string JsonSerializer::serialize(TrackerEvent* e)
+{
+	return e->toJson();
+}

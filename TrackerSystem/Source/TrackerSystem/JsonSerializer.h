@@ -1,9 +1,10 @@
 #pragma once
-#include <iostream>
-class Test
+#include "ISerializer.h"
+
+class JsonSerializer: public ISerializer
 {
 public:
 
-	static void hola() { std::cout << "hola"; }
+	virtual std::string serialize(TrackerEvent* e);
 };
 

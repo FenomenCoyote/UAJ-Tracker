@@ -1,6 +1,13 @@
 1.- ¿Definición de eventos en fichero a parte?
 
+No(No entiendo para que) --Sandra
+
 2.- ¿Tracker event como interface o definirla directamente?
+
+Se define directamente, no puede ser abstract ya que contiene variables
 
 3.- Id de evento: Entendemos que se refiere al enum que define cada tipo de evento, necesario para la polimorfia de la cola para cuando se ejecuten los métodos de las subclases
 	pero no haría falta también el nº que representa el evento? si es el 1, el 2, el 5.000...
+
+Puede ser un string, un enum(y que este enum se parsee a string)...yo no usaria como tal un entero 
+ya que luego cuando se lee de archivo es más costoso saber que evento se ha gestionado.

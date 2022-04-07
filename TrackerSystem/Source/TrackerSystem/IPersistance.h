@@ -1,9 +1,19 @@
 #pragma once
-#include <iostream>
-class Test
+
+class TrackerEvent;
+class ISerializer;
+
+class IPersistance
 {
 public:
+	IPersistance(ISerializer* s);
 
-	static void hola() { std::cout << "hola"; }
+	virtual void send(TrackerEvent* e) = 0;
+	virtual void flush() = 0;
+
+	void setSerializer(ISerializer* serializer);
+
+protected:
+	ISerializer* _serializer;
 };
 
