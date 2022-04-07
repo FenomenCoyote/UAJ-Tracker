@@ -102,6 +102,9 @@
     <ClInclude Include="..\..\Source\TrackerSystem\SessionStartEvent.h">
       <Filter>Archivos de encabezado\Events\TrackerEvents</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\GameEvent.h">
+      <Filter>Archivos de encabezado\Events\GenericGameEvents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\TrackerSystem\FilePersistance.cpp">
@@ -139,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\TrackerEvent.cpp">
       <Filter>Archivos de origen\Events\TrackerEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\GameEvent.cpp">
+      <Filter>Archivos de origen\Events\GenericGameEvents</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

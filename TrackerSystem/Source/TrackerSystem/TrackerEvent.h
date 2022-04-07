@@ -15,6 +15,8 @@ gameId:
 	- 1 byte: 255 differents games
 */
 
+enum class EventType{};
+
 class TrackerEvent {
 public:
 	TrackerEvent();

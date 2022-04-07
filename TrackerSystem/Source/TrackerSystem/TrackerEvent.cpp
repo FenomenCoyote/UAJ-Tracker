@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "TrackerEvent.h"
 
-TrackerEvent::TrackerEvent()
+TrackerEvent::TrackerEvent(): _timeStamp(0), _userId(0), _sessionId(0), _gameId(0), _eventId(0)
 {
 }
 
