@@ -1,9 +1,11 @@
 #pragma once
-#include <iostream>
-class Test
-{
-public:
+#include "pch.h"
+#include "GameEvent.h"
 
-	static void hola() { std::cout << "hola"; }
+class LevelQuitEvent : public GameEvent {
+public:
+	LevelQuitEvent();
+	~LevelQuitEvent();
+private:
 };
 
