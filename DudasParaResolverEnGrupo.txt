@@ -1,0 +1,3 @@
+1.- ¿Definición de eventos en fichero a parte?
+
+2.- ¿Tracker event como interface o definirla directamente?

@@ -43,11 +43,20 @@
     <Filter Include="Archivos de origen\Others">
       <UniqueIdentifier>{ef05d604-1f24-4d55-8bf3-53bb48385b9c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Events\TrackerEvents">
+      <UniqueIdentifier>{9d773d52-baa3-486a-a5af-dbb7a3c322af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Events\TrackerEvents">
+      <UniqueIdentifier>{f7a718fd-1b1c-42e0-9e6a-5cbca0c92e6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Events\GameEvents">
+      <UniqueIdentifier>{419e2121-ed6b-4ed0-9071-9b1583c2e182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Events\GameEvents">
+      <UniqueIdentifier>{630325f7-b266-41bf-a56e-3bdc09c4f0a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\TrackerSystem\TrackerEvent.h">
-      <Filter>Archivos de encabezado\Events</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\TrackerSystem\FilePersistance.h">
       <Filter>Archivos de encabezado\Persistance</Filter>
     </ClInclude>
@@ -75,6 +84,45 @@
     <ClInclude Include="..\..\Source\TrackerSystem\pch.h">
       <Filter>Archivos de encabezado\Others</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\TrackerEvent.h">
+      <Filter>Archivos de encabezado\Events\TrackerEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\SessionEndEvent.h">
+      <Filter>Archivos de encabezado\Events\TrackerEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\DirtyUtensilsAttackEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\DishFinishedEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\GameEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\IngredientDespawnEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\IngredientKillEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\LevelEndEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\LevelQuitEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\LevelStartEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\SessionStartEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\UtensilBecomesDirtyEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\UtensilCleanEvent.h">
+      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\TrackerSystem\FilePersistance.cpp">
@@ -89,14 +137,50 @@
     <ClCompile Include="..\..\Source\TrackerSystem\Tracker.cpp">
       <Filter>Archivos de origen\Tracker</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerSystem\TrackerEvent.cpp">
-      <Filter>Archivos de origen\Events</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\Test.cpp">
       <Filter>Archivos de origen\Others</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\pch.cpp">
       <Filter>Archivos de origen\Others</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\SessionEndEvent.cpp">
+      <Filter>Archivos de origen\Events\TrackerEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\SessionStartEvent.cpp">
+      <Filter>Archivos de origen\Events\TrackerEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\DirtyUtensilsAttackEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\DishFinishedEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\GameEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\IngredientDespawnEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\IngredientKillEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\LevelEndEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\LevelQuitEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\LevelStartEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\UtensilBecomesDirtyEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\UtensilCleanEvent.cpp">
+      <Filter>Archivos de origen\Events\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\TrackerEvent.cpp">
+      <Filter>Archivos de origen\Events\TrackerEvents</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
