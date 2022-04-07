@@ -1,2 +1,10 @@
 #include "pch.h"
-#include "Test.h"
+#include "UtensilBecomesDirtyEvent.h"
+
+UtensilBecomesDirtyEvent::UtensilBecomesDirtyEvent()
+{
+}
+
+UtensilBecomesDirtyEvent::~UtensilBecomesDirtyEvent()
+{
+}

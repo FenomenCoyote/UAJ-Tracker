@@ -1,2 +1,10 @@
 #include "pch.h"
-#include "Test.h"
+#include "IngredientDespawnEvent.h"
+
+IngredientDespawnEvent::IngredientDespawnEvent()
+{
+}
+
+IngredientDespawnEvent::~IngredientDespawnEvent()
+{
+}

@@ -1,9 +1,15 @@
 #pragma once
-#include <iostream>
-class Test
-{
-public:
+#include "GameEvent.h"
 
-	static void hola() { std::cout << "hola"; }
+class DishFinishedEvent : public GameEvent {
+public:
+	DishFinishedEvent();
+	~DishFinishedEvent();
+
+	inline bool getResult() const;
+
+	inline void setResult(bool m);
+private:
+	bool _result;
 };
 

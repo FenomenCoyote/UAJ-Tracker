@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "SessionStartEvent.h"
 
 SessionStartEvent::SessionStartEvent()

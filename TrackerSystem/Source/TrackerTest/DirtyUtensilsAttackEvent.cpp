@@ -1,2 +1,10 @@
 #include "pch.h"
-#include "Test.h"
+#include "DirtyUtensilsAttackEvent.h"
+
+DirtyUtensilsAttackEvent::DirtyUtensilsAttackEvent()
+{
+}
+
+DirtyUtensilsAttackEvent::~DirtyUtensilsAttackEvent()
+{
+}

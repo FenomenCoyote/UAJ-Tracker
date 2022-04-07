@@ -1,2 +1,10 @@
 #include "pch.h"
-#include "Test.h"
+#include "UtensilCleanEvent.h"
+
+UtensilCleanEvent::UtensilCleanEvent()
+{
+}
+
+UtensilCleanEvent::~UtensilCleanEvent()
+{
+}

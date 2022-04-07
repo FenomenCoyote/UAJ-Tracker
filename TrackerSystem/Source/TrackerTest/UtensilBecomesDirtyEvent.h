@@ -1,9 +1,10 @@
 #pragma once
-#include <iostream>
-class Test
-{
-public:
+#include "GameEvent.h"
 
-	static void hola() { std::cout << "hola"; }
+class UtensilBecomesDirtyEvent : public GameEvent {
+public:
+	UtensilBecomesDirtyEvent();
+	~UtensilBecomesDirtyEvent();
+private:
 };
 

@@ -1,5 +1,4 @@
 #pragma once
-#include "pch.h"
 #include "GameEvent.h"
 
 class LevelEndEvent : public GameEvent {
