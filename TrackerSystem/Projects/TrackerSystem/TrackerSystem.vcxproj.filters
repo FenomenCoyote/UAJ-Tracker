@@ -13,24 +13,90 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\Serializer">
+      <UniqueIdentifier>{15e53a86-8458-4a14-9634-adefc18d48b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Persistance">
+      <UniqueIdentifier>{19db3eab-14b8-488d-93b0-c21886e26ef0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Tracker">
+      <UniqueIdentifier>{736924f7-aebf-4fb4-b69d-18f884769c7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Events">
+      <UniqueIdentifier>{20a71801-f30b-461d-8fe9-a2a6b9dcbe74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Serializer">
+      <UniqueIdentifier>{fcf1fae5-ade4-4c58-a869-14d349d05fba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Persistance">
+      <UniqueIdentifier>{208cf655-3470-4f20-b1cd-1f32887bd1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Tracker">
+      <UniqueIdentifier>{1b5d6636-7dc9-4d5c-90a2-f109c9c1e22c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Events">
+      <UniqueIdentifier>{05e9519a-b26f-45d1-b070-4afca4ae058b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Others">
+      <UniqueIdentifier>{f16c420e-423f-4f31-90dd-cfb733f20ccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Others">
+      <UniqueIdentifier>{ef05d604-1f24-4d55-8bf3-53bb48385b9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\TrackerSystem\framework.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="..\..\Source\TrackerSystem\TrackerEvent.h">
+      <Filter>Archivos de encabezado\Events</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\pch.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="..\..\Source\TrackerSystem\FilePersistance.h">
+      <Filter>Archivos de encabezado\Persistance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\IPersistance.h">
+      <Filter>Archivos de encabezado\Persistance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\ServerPersistance.h">
+      <Filter>Archivos de encabezado\Persistance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\JsonSerializer.h">
+      <Filter>Archivos de encabezado\Serializer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\ISerializer.h">
+      <Filter>Archivos de encabezado\Serializer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\Tracker.h">
+      <Filter>Archivos de encabezado\Tracker</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TrackerSystem\Test.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\framework.h">
+      <Filter>Archivos de encabezado\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\pch.h">
+      <Filter>Archivos de encabezado\Others</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\TrackerSystem\pch.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="..\..\Source\TrackerSystem\FilePersistance.cpp">
+      <Filter>Archivos de origen\Persistance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\ServerPersistance.cpp">
+      <Filter>Archivos de origen\Persistance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\JsonSerializer.cpp">
+      <Filter>Archivos de origen\Serializer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\Tracker.cpp">
+      <Filter>Archivos de origen\Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\TrackerEvent.cpp">
+      <Filter>Archivos de origen\Events</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\Test.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Others</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\pch.cpp">
+      <Filter>Archivos de origen\Others</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

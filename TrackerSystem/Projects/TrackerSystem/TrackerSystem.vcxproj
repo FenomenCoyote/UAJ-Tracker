@@ -19,18 +19,30 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\TrackerSystem\FilePersistance.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\framework.h" />
+    <ClInclude Include="..\..\Source\TrackerSystem\IPersistance.h" />
+    <ClInclude Include="..\..\Source\TrackerSystem\ISerializer.h" />
+    <ClInclude Include="..\..\Source\TrackerSystem\JsonSerializer.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\pch.h" />
+    <ClInclude Include="..\..\Source\TrackerSystem\ServerPersistance.h" />
     <ClInclude Include="..\..\Source\TrackerSystem\Test.h" />
+    <ClInclude Include="..\..\Source\TrackerSystem\Tracker.h" />
+    <ClInclude Include="..\..\Source\TrackerSystem\TrackerEvent.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\TrackerSystem\FilePersistance.cpp" />
+    <ClCompile Include="..\..\Source\TrackerSystem\JsonSerializer.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TrackerSystem\ServerPersistance.cpp" />
     <ClCompile Include="..\..\Source\TrackerSystem\Test.cpp" />
+    <ClCompile Include="..\..\Source\TrackerSystem\Tracker.cpp" />
+    <ClCompile Include="..\..\Source\TrackerSystem\TrackerEvent.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
