@@ -114,14 +114,14 @@
     <ClInclude Include="..\..\Source\TrackerSystem\LevelStartEvent.h">
       <Filter>Archivos de encabezado\Events\GameEvents</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerSystem\SessionStartEvent.h">
-      <Filter>Archivos de encabezado\Events\GameEvents</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\TrackerSystem\UtensilBecomesDirtyEvent.h">
       <Filter>Archivos de encabezado\Events\GameEvents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TrackerSystem\UtensilCleanEvent.h">
       <Filter>Archivos de encabezado\Events\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackerSystem\SessionStartEvent.h">
+      <Filter>Archivos de encabezado\Events\TrackerEvents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
