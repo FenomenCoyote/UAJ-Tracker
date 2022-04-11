@@ -4,9 +4,23 @@
 #include "TrackerEvent.h"
 #include "ISerializer.h"
 
-FilePersistance::FilePersistance(ISerializer* s, char* filePath): IPersistance(s), _filePath(filePath), _eventQueue1(), _eventQueue2(), _thread(), _flushRequested(false)
+FilePersistance::FilePersistance(ISerializer* s, char* filePath): IPersistance(s), _filePath(filePath), _eventQueue1(), _eventQueue2(), _flushRequested(false), _threadActive(true)
 {
 	_activeQueue = &_eventQueue1;
+
+	_thread = new std::thread(&flushQueue, this);
+}
+
+FilePersistance::~FilePersistance()
+{
+	_threadActive = false;
+
+	_thread->join();
+
+	if (!_eventQueue1.empty())
+		writeQueue(_eventQueue1);
+	if (!_eventQueue2.empty())
+		writeQueue(_eventQueue2);
 }
 
 void FilePersistance::send(TrackerEvent* e)
@@ -16,31 +30,28 @@ void FilePersistance::send(TrackerEvent* e)
 
 void FilePersistance::flush()
 {
-	bool isFlushing = false;
-
-	mtx.lock();
-	isFlushing = _flushRequested;
-	_flushRequested = true;
-	mtx.unlock();
-
 	//si la cola esta realizando flush no se puede realizar otro para evitar que haya parones de ejecucion
-	if (isFlushing)	
+	if (_flushRequested)	
 		return;	
+
+	_flushRequested = true;
+
+	if (_activeQueue == &_eventQueue1) 
+		_activeQueue = &_eventQueue2;
+	else 
+		_activeQueue = &_eventQueue1;
 }
 
-//TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 void FilePersistance::flushQueue()
 {
-	while (true) {
+	while (_threadActive) {
 		if (_flushRequested) {
-			if (_activeQueue == &_eventQueue1) {
-				_activeQueue = &_eventQueue2;
+			if (_activeQueue == &_eventQueue1) 
 				writeQueue(_eventQueue1);
-			}
-			else {
-				_activeQueue = &_eventQueue1;
+			else 
 				writeQueue(_eventQueue2);
-			}
+
+			_flushRequested = false;
 		}
 	}
 }
@@ -54,11 +65,13 @@ void FilePersistance::writeQueue(std::queue<TrackerEvent*> queue)
 		TrackerEvent* e = queue.front();	queue.pop();
 
 		std::string aux = _serializer->serialize(e);
-		char* buffer = new char[aux.length()];
+		char* buffer = new char[aux.length() + CHAR_EXTRA_SPACE];
 
 		strcpy_s(buffer, aux.length(), aux.c_str());
 
 		fwrite(&aux, aux.length(), 1, file);
+
+		delete buffer;
 	}
 	fclose(file);
 }

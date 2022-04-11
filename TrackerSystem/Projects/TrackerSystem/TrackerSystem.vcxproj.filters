@@ -147,7 +147,7 @@
       <Filter>Archivos de origen\Events\GenericGameEvents</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TrackerSystem\IPersistance.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Persistance</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
