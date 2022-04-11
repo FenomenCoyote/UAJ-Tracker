@@ -23,6 +23,8 @@ Tracker::~Tracker()
 
 bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceType, SerializerType serializerType)
 {
+    assert(instance == nullptr);
+
     instance = new Tracker();
 
     ISerializer* ser;
@@ -122,24 +124,24 @@ void Tracker::flush()
     persistance->flush();
 }
 
-template<typename T, typename ...Targs>
-void Tracker::trackEvent(Targs&&... args)
+//template<typename T, typename ...Targs>
+//void Tracker::trackEvent(Targs&&... args)
+//{
+//    TrackerEvent* te = new T(std::forward<Targs>(args)...);
+//
+//    if (te != nullptr) {
+//        te->setTimeStamp(getTimestamp());
+//        te->setGameId(gameID);
+//        te->setSessionId(sessionID);
+//
+//        //TODO: string OR unsigned long int
+//        te->setUserId(userID);
+//    }
+//
+//    persistance->send(te);
+//}
+
+time_t Tracker::getTimestamp()
 {
-    TrackerEvent* te = new T(std::forward<Targs>(args)...);
-
-    if (te != nullptr) {
-        te->setTimeStamp(getTimestamp());
-        te->setGameId(gameID);
-        te->setSessionId(sessionID);
-
-        //TODO: string OR unsigned long int
-        te->setUserId(userID);
-    }
-
-    persistance->send(te);
-}
-
-std::time_t Tracker::getTimestamp()
-{
-    return std::time(nullptr);
+    return time(nullptr);
 }

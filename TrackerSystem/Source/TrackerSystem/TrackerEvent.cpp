@@ -11,7 +11,7 @@ TrackerEvent::~TrackerEvent()
 
 std::string TrackerEvent::toJson()
 {
-	return "potatoe\n";
+	return "prueba\n";
 }
 
 int TrackerEvent::getTimeStamp() const

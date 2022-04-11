@@ -17,7 +17,6 @@ public:
 	virtual void setPath(char* path) override;
 
 private:
-	const int CHAR_EXTRA_SPACE = 3;
 
 	char* _filePath;
 	std::atomic<bool> _flushRequested;

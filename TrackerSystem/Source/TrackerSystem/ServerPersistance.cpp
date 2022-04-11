@@ -63,11 +63,6 @@ void ServerPersistance::writeQueue(std::queue<TrackerEvent*>& queue)
 		TrackerEvent* e = queue.front();	queue.pop();
 
 		std::string aux = _serializer->serialize(e);
-		char* buffer = new char[aux.length() + CHAR_EXTRA_SPACE];
-		strcpy_s(buffer, aux.length(), aux.c_str());
 
-
-
-		delete buffer;
 	}
 }

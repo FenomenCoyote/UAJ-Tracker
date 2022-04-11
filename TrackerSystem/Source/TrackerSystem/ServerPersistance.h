@@ -15,7 +15,6 @@ public:
 	void setPath(char* path) override {}
 
 private:
-	const int CHAR_EXTRA_SPACE = 3;
 
 	std::atomic<bool> _flushRequested;
 	std::atomic<bool> _threadActive;

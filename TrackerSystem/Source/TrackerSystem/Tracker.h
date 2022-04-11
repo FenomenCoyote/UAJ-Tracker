@@ -3,9 +3,9 @@
 #include <cassert>
 #include <string>
 #include "defines.h"
+#include "IPersistance.h"
 
-
-class IPersistance;
+//class IPersistance;
 class TrackerEvent;
 
 class DllExport Tracker
@@ -65,7 +65,19 @@ public:
 	void flush();
 
 	template<typename T = TrackerEvent, typename ...Targs>
-	void trackEvent(Targs&&... args);
+	void trackEvent(Targs&&... args) {
+		TrackerEvent* te = new T(std::forward<Targs>(args)...);
+		if (te != nullptr) {
+		    te->setTimeStamp(getTimestamp());
+		    te->setGameId(gameID);
+		    te->setSessionId(sessionID);
+		
+		    //TODO: string OR unsigned long int
+		    te->setUserId(userID);
+		}
+		
+		persistance->send(te);
+	}
 
 private:
 
@@ -76,7 +88,7 @@ private:
 	/**
 	* time_t == long long
 	*/
-	std::time_t getTimestamp();
+	time_t getTimestamp();
 
 	uint64_t userID;
 	

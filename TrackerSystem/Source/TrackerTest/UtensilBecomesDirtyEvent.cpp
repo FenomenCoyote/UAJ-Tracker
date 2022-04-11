@@ -1,6 +1,6 @@
 #include "UtensilBecomesDirtyEvent.h"
 
-UtensilBecomesDirtyEvent::UtensilBecomesDirtyEvent()
+UtensilBecomesDirtyEvent::UtensilBecomesDirtyEvent(int a)
 {
 }
 

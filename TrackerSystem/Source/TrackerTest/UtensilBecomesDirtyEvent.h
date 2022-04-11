@@ -3,7 +3,7 @@
 
 class UtensilBecomesDirtyEvent : public GameEvent {
 public:
-	UtensilBecomesDirtyEvent();
+	UtensilBecomesDirtyEvent(int a);
 	~UtensilBecomesDirtyEvent();
 private:
 };
