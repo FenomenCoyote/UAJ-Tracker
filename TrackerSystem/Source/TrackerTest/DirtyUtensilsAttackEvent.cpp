@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "DirtyUtensilsAttackEvent.h"
 
 DirtyUtensilsAttackEvent::DirtyUtensilsAttackEvent()

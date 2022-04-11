@@ -6,9 +6,9 @@ public:
 	IngredientKillEvent();
 	~IngredientKillEvent();
 
-	inline bool getMistake() const;
+	bool getMistake() const;
 
-	inline void setMistake(bool m);
+	void setMistake(bool m);
 private:
 	bool _mistake;
 };

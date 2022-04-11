@@ -1,7 +1,7 @@
 #pragma once
 #include "ISerializer.h"
 
-class JsonSerializer: public ISerializer
+class DllExport JsonSerializer: public ISerializer
 {
 public:
 

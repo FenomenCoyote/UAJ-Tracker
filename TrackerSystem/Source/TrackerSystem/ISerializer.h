@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
-
+#include "defines.h"
 class TrackerEvent;
 
-class ISerializer
+class DllExport ISerializer
 {
 public:
 

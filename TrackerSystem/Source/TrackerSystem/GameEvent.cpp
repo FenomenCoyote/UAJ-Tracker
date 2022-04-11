@@ -9,12 +9,12 @@ GameEvent::~GameEvent()
 {
 }
 
-inline uint16_t GameEvent::getLevelId() const
+uint16_t GameEvent::getLevelId() const
 {
 	return _levelId;
 }
 
-inline void GameEvent::setLevelId(uint16_t lI)
+void GameEvent::setLevelId(uint16_t lI)
 {
 	_levelId = lI;
 }

@@ -8,7 +8,7 @@ FilePersistance::FilePersistance(ISerializer* s, char* filePath): IPersistance(s
 {
 	_activeQueue = &_eventQueue1;
 
-	_thread = new std::thread(&flushQueue, this);
+	_thread = new std::thread(&FilePersistance::flushQueue, this);
 }
 
 FilePersistance::~FilePersistance()
@@ -21,6 +21,8 @@ FilePersistance::~FilePersistance()
 		writeQueue(_eventQueue1);
 	if (!_eventQueue2.empty())
 		writeQueue(_eventQueue2);
+
+	delete _filePath;
 }
 
 void FilePersistance::send(TrackerEvent* e)
@@ -42,11 +44,17 @@ void FilePersistance::flush()
 		_activeQueue = &_eventQueue1;
 }
 
+void FilePersistance::setPath(char* path)
+{
+	delete _filePath;
+	_filePath = path;
+}
+
 void FilePersistance::flushQueue()
 {
 	while (_threadActive) {
 		if (_flushRequested) {
-			if (_activeQueue == &_eventQueue1) 
+			if (_activeQueue == &_eventQueue2) 
 				writeQueue(_eventQueue1);
 			else 
 				writeQueue(_eventQueue2);
@@ -56,24 +64,26 @@ void FilePersistance::flushQueue()
 	}
 }
 
-void FilePersistance::writeQueue(std::queue<TrackerEvent*> queue)
+void FilePersistance::writeQueue(std::queue<TrackerEvent*>& queue)
 {
 	FILE* file;
-	fopen_s(&file,_filePath, "a");
+	//fopen_s(&file,_filePath, "a");
 
 	while (!queue.empty()) {
+
 		TrackerEvent* e = queue.front();	queue.pop();
 
 		std::string aux = _serializer->serialize(e);
+
 		char* buffer = new char[aux.length() + CHAR_EXTRA_SPACE];
 
 		strcpy_s(buffer, aux.length(), aux.c_str());
 
-		fwrite(&aux, aux.length(), 1, file);
+		//fwrite(&aux, aux.length(), 1, file);
 
 		delete buffer;
 	}
-	fclose(file);
+	//fclose(file);
 }
 
 

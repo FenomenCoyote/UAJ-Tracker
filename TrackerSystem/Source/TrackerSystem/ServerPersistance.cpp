@@ -1,14 +1,15 @@
+#include "pch.h"
 #include "ServerPersistance.h"
 #include "TrackerEvent.h"
 #include "ISerializer.h"
 
 #define X_KEY_PASSWORD "54520efb6f9e255c78ef58becc7c5b7f"
 
-ServerPersistance::ServerPersistance() : IPersistance(null), _eventQueue1(), _eventQueue2(), _thread(), _flushRequested(false), _threadActive(true)
+ServerPersistance::ServerPersistance(ISerializer* s, char* serverRoute) : IPersistance(s), _eventQueue1(), _eventQueue2(), _thread(), _flushRequested(false), _threadActive(true)
 {
 	_activeQueue = &_eventQueue1;
 
-	_thread = new std::thread(&flushQueue, this);
+	_thread = new std::thread(&ServerPersistance::flushQueue, this);
 }
 
 ServerPersistance::~ServerPersistance()
@@ -56,7 +57,7 @@ void ServerPersistance::flushQueue()
 	}
 }
 
-void ServerPersistance::writeQueue(std::queue<TrackerEvent*> queue)
+void ServerPersistance::writeQueue(std::queue<TrackerEvent*>& queue)
 {
 	while (!queue.empty()) {
 		TrackerEvent* e = queue.front();	queue.pop();

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <chrono>
+#include "defines.h"
 
 /* 
 userId: 
@@ -15,28 +16,26 @@ gameId:
 	- 1 byte: 255 differents games
 */
 
-enum class EventType{};
-
-class TrackerEvent {
+class DllExport TrackerEvent {
 public:
 	TrackerEvent();
 	~TrackerEvent();
 	std::string toJson();
 	
-	inline int getTimeStamp() const;
-	inline unsigned long int getUserId() const;
-	inline unsigned short int getSessionId() const;
-	inline uint8_t getGameId() const;
-	inline uint16_t getEventId() const;
+	int getTimeStamp() const;
+	uint64_t getUserId() const;
+	unsigned short int getSessionId() const;
+	uint8_t getGameId() const;
+	uint16_t getEventId() const;
 
-	inline void setTimeStamp(int tS);
-	inline void setUserId(unsigned long int uI);
-	inline void setSessionId(unsigned short int sI);
-	inline void setGameId(uint8_t gI);
-	inline void setEventId(uint16_t eI);
+	void setTimeStamp(int tS);
+	void setUserId(uint64_t uI);
+	void setSessionId(unsigned short int sI);
+	void setGameId(uint8_t gI);
+	void setEventId(uint16_t eI);
 private:
 	int _timeStamp;
-	unsigned long int _userId;
+	uint64_t _userId;
 	unsigned short int _sessionId;
 	uint8_t _gameId;
 	uint16_t _eventId;

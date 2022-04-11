@@ -1,7 +1,7 @@
 #pragma once
 #include "GameEvent.h"
 
-class LevelQuitEvent : public GameEvent {
+class DllExport LevelQuitEvent : public GameEvent {
 public:
 	LevelQuitEvent();
 	~LevelQuitEvent();

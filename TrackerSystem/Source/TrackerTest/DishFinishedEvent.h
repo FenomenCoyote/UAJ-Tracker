@@ -6,9 +6,9 @@ public:
 	DishFinishedEvent();
 	~DishFinishedEvent();
 
-	inline bool getResult() const;
+	bool getResult() const;
 
-	inline void setResult(bool m);
+	void setResult(bool m);
 private:
 	bool _result;
 };

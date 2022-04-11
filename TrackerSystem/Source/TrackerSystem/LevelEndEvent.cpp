@@ -9,12 +9,12 @@ LevelEndEvent::~LevelEndEvent()
 {
 }
 
-inline bool LevelEndEvent::getLevelWin() const
+bool LevelEndEvent::getLevelWin() const
 {
 	return _levelWin;
 }
 
-inline void LevelEndEvent::setLevelWin(bool lW)
+void LevelEndEvent::setLevelWin(bool lW)
 {
 	_levelWin = lW;
 }

@@ -1,14 +1,14 @@
 #pragma once
 #include "GameEvent.h"
 
-class LevelEndEvent : public GameEvent {
+class DllExport LevelEndEvent : public GameEvent {
 public:
 	LevelEndEvent();
 	~LevelEndEvent();
 
-	inline bool getLevelWin() const;
+	bool getLevelWin() const;
 
-	inline void setLevelWin(bool lW);
+	void setLevelWin(bool lW);
 private:
 	bool _levelWin;
 };

@@ -4,7 +4,7 @@
 #include <thread> 
 #include <atomic>
 
-class FilePersistance : public IPersistance
+class DllExport FilePersistance : public IPersistance
 {
 public:
 
@@ -13,6 +13,8 @@ public:
 
 	virtual void send(TrackerEvent* e);
 	virtual void flush();
+
+	virtual void setPath(char* path) override;
 
 private:
 	const int CHAR_EXTRA_SPACE = 3;
@@ -28,6 +30,6 @@ private:
 	std::thread* _thread;
 
 	void flushQueue();
-	void writeQueue(std::queue<TrackerEvent*> queue);
+	void writeQueue(std::queue<TrackerEvent*>& queue);
 };
 

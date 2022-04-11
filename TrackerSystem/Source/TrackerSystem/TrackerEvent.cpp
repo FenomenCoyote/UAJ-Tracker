@@ -11,7 +11,7 @@ TrackerEvent::~TrackerEvent()
 
 std::string TrackerEvent::toJson()
 {
-	return "";
+	return "potatoe\n";
 }
 
 int TrackerEvent::getTimeStamp() const
@@ -19,7 +19,7 @@ int TrackerEvent::getTimeStamp() const
 	return _timeStamp;
 }
 
-unsigned long int TrackerEvent::getUserId() const
+uint64_t TrackerEvent::getUserId() const
 {
 	return _userId;
 }
@@ -45,7 +45,7 @@ void TrackerEvent::setTimeStamp(int tS)
 	_timeStamp = tS;
 }
 
-void TrackerEvent::setUserId(unsigned long int uI)
+void TrackerEvent::setUserId(uint64_t uI)
 {
 	_userId = uI;
 }

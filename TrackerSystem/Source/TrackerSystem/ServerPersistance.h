@@ -4,13 +4,15 @@
 #include <thread>
 #include <atomic>
 
-class ServerPersistance : IPersistance {
+class DllExport ServerPersistance : public IPersistance {
 public:
 	ServerPersistance(ISerializer* s, char* serverRoute);
 	~ServerPersistance();
 
 	void send(TrackerEvent* e);
 	void flush();
+
+	void setPath(char* path) override {}
 
 private:
 	const int CHAR_EXTRA_SPACE = 3;
@@ -25,6 +27,6 @@ private:
 	std::thread* _thread;
 
 	void flushQueue();
-	void writeQueue(std::queue<TrackerEvent*> queue);
+	void writeQueue(std::queue<TrackerEvent*>& queue);
 };
 
