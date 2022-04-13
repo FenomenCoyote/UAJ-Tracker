@@ -3,6 +3,7 @@
 
 LevelQuitEvent::LevelQuitEvent()
 {
+	setEventId(3);
 }
 
 LevelQuitEvent::~LevelQuitEvent()

@@ -3,6 +3,7 @@
 
 SessionEndEvent::SessionEndEvent()
 {
+	setEventId(255);
 }
 
 SessionEndEvent::~SessionEndEvent()

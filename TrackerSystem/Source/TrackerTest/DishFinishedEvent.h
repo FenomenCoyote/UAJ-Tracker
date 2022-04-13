@@ -1,10 +1,11 @@
 #pragma once
-#include "GameEvent.h"
+#include "AnimalCookingEvent.h"
 
-class DishFinishedEvent : public GameEvent {
+class DishFinishedEvent : public AnimalCookingEvent {
 public:
 	DishFinishedEvent();
 	~DishFinishedEvent();
+	virtual std::string toJson() override;
 
 	bool getResult() const;
 

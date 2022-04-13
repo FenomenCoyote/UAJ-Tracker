@@ -9,6 +9,11 @@ GameEvent::~GameEvent()
 {
 }
 
+std::string GameEvent::toJson()
+{
+	return TrackerEvent::toJson() + ",\"levelId\":" + std::to_string(_levelId);
+}
+
 uint16_t GameEvent::getLevelId() const
 {
 	return _levelId;

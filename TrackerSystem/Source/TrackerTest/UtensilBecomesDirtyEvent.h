@@ -1,9 +1,9 @@
 #pragma once
-#include "GameEvent.h"
+#include "AnimalCookingEvent.h"
 
-class UtensilBecomesDirtyEvent : public GameEvent {
+class UtensilBecomesDirtyEvent : public AnimalCookingEvent {
 public:
-	UtensilBecomesDirtyEvent(int a);
+	UtensilBecomesDirtyEvent();
 	~UtensilBecomesDirtyEvent();
 private:
 };

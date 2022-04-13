@@ -1,11 +1,12 @@
 #pragma once
-#include "GameEvent.h"
+#include "AnimalCookingEvent.h"
 
-class IngredientKillEvent : public GameEvent {
+class IngredientKillEvent : public AnimalCookingEvent {
 public:
 	IngredientKillEvent();
 	~IngredientKillEvent();
-
+	virtual std::string toJson() override;
+	
 	bool getMistake() const;
 
 	void setMistake(bool m);

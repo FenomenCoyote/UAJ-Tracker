@@ -5,6 +5,7 @@ class DllExport LevelEndEvent : public GameEvent {
 public:
 	LevelEndEvent();
 	~LevelEndEvent();
+	virtual std::string toJson() override;
 
 	bool getLevelWin() const;
 

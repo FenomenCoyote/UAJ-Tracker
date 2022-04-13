@@ -1,9 +1,5 @@
 #include "pch.h"
 #include "TrackerEvent.h"
-#include <iostream>
-#include "rapidjson/writer.h"
-#include "rapidjson/document.h"
-#include "rapidjson/stringbuffer.h"
 
 using namespace rapidjson;
 
@@ -17,33 +13,41 @@ TrackerEvent::~TrackerEvent()
 
 std::string TrackerEvent::toJson()
 {  
-    StringBuffer s;
-    Writer<StringBuffer> writer(s);
+    //METHOD1 
+    //StringBuffer s;
+    //Writer<StringBuffer> writer(s);    
+    //writer.StartObject();             
+    //writer.Key("timeStamp");              
+    //writer.Int(_timeStamp);           
 
-    //json structure : timeStamp, eventId, gameId, userId, sessionId
-    writer.StartObject();              // Between StartObject()/EndObject(), 
-    writer.Key("timeStamp");                // output a key,
-    writer.Int(_timeStamp);             // follow by a value.
+    //writer.Key("eventId");
+    //writer.Uint(_eventId);
 
-    writer.Key("eventId");
-    writer.Uint(_eventId);
+    //writer.Key("gameId");
+    //writer.Uint(1);
 
-    writer.Key("gameId");
-    writer.Uint(1);
+    //writer.Key("userId");
+    //writer.Uint64(245);
 
-    writer.Key("userId");
-    writer.Uint64(245);
-
-    writer.Key("sessionId");
-    writer.Int(_sessionId);
+    //writer.Key("sessionId");
+    //writer.Int(_sessionId);
  
-    writer.EndObject();    
-    std::cout << s.GetString() << std::endl;    
-    return s.GetString();
+    //writer.EndObject();    
+    //std::cout << s.GetString() << std::endl;    
+    //return s.GetString();
 
- /*   const char* json = " { \"hello\" : \"world\", \"t\" : true , \"f\" : false, \"n\": null, \"i\":123, \"pi\": 3.1416, \"a\":[1, 2, 3, 4] } ";
-    printf("Original JSON:\n %s\n", json);
-    return json;*/
+    //METHOD2 
+    //const char* json = "{ \"hello\" : \"world\", \"t\" : true , \"f\" : false, \"n\": null, \"i\":123, \"pi\": 3.1416, \"a\":[1, 2, 3, 4] }"; 
+    //printf("Original JSON:\n %s\n", json);
+    //return json;
+
+    //METHOD3
+    std::string json = "\"timeStamp\":" + std::to_string(_timeStamp) +        
+        ",\"userId\":" + std::to_string(_userId) +
+        ",\"sessionId\":" + std::to_string(_sessionId) +
+        ",\"gameId\":" + std::to_string(_gameId) +
+        ",\"eventId\":" + std::to_string(_eventId) ;
+    return json;
 }
 
 int TrackerEvent::getTimeStamp() const
@@ -66,7 +70,7 @@ uint8_t TrackerEvent::getGameId() const
 	return _gameId;
 }
 
-uint16_t TrackerEvent::getEventId() const
+uint8_t TrackerEvent::getEventId() const
 {
 	return _eventId;
 }
@@ -92,7 +96,7 @@ void TrackerEvent::setGameId(uint8_t gI)
 	_gameId = gI;
 }
 
-void TrackerEvent::setEventId(uint16_t eI)
+void TrackerEvent::setEventId(uint8_t eI)
 {
 	_eventId = eI;
 }

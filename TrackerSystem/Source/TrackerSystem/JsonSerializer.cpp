@@ -3,18 +3,9 @@
 #include "JsonSerializer.h"
 #include "TrackerEvent.h"
 
-JsonSerializer::JsonSerializer()
-{
-	/*Writer<StringBuffer> writer(s);
-	writer.StartObject();*/
-}
-
-JsonSerializer::~JsonSerializer()
-{
-	//writer.EndObject();	
-}
-
 std::string JsonSerializer::serialize(TrackerEvent* e)
 {
-	return e->toJson() + "\n";
+	std::string output = "{" + e->toJson() + "}\n";
+	return output;
+	//return  e->toJson() + "\n";	
 }

@@ -6,6 +6,7 @@ class DllExport GameEvent: public TrackerEvent{
 public:
 	GameEvent();
 	~GameEvent();
+	virtual std::string toJson();
 
 	uint16_t getLevelId() const;
 

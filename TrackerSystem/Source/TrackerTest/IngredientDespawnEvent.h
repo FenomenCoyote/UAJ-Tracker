@@ -1,7 +1,7 @@
 #pragma once
-#include "GameEvent.h"
+#include "AnimalCookingEvent.h"
 
-class IngredientDespawnEvent : public GameEvent {
+class IngredientDespawnEvent : public AnimalCookingEvent {
 public:
 	IngredientDespawnEvent();
 	~IngredientDespawnEvent();
