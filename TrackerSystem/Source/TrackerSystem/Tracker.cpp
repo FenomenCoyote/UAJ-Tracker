@@ -33,9 +33,14 @@ bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceTy
     {
     case Tracker::JSON_:
         ser = new JsonSerializer();
+     /*   auto jser = static_cast<JsonSerializer*>(ser);
+        if (jser != nullptr) jser->init();*/
+
         break;
     default:
         ser = new JsonSerializer();
+        /*auto jser = static_cast<JsonSerializer*>(ser);
+        if (jser != nullptr) jser->init();*/
         break;
     }
 

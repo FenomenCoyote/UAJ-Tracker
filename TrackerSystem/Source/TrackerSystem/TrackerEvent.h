@@ -14,6 +14,8 @@ sessionId:
 
 gameId:
 	- 1 byte: 255 differents games
+
+json structure: timeStamp, eventId, gameId, userId, sessionId
 */
 
 class DllExport TrackerEvent {

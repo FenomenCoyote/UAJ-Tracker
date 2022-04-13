@@ -73,7 +73,7 @@ void FilePersistance::writeQueue(std::queue<TrackerEvent*>& queue)
 		TrackerEvent* e = queue.front();	queue.pop();
 
 		std::string aux = _serializer->serialize(e);
-
+		
 		fwrite(aux.c_str(), aux.length(), 1, file);
 	}
 
