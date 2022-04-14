@@ -64,5 +64,6 @@ void ServerPersistance::writeQueue(std::queue<TrackerEvent*>& queue)
 
 		std::string aux = _serializer->serialize(e);
 
+		delete e;
 	}
 }

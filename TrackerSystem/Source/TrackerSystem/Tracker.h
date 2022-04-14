@@ -17,6 +17,7 @@ public:
 	enum SerializerType { JSON_ };
 
 public:
+	~Tracker(); 
 
 	/**
 	 * Inits system
@@ -64,26 +65,27 @@ public:
 
 	void flush();
 
-	template<typename T = TrackerEvent, typename ...Targs>
+	void trackEvent(TrackerEvent* e);
+
+	/*template<typename T = TrackerEvent, typename ...Targs>
 	void trackEvent(Targs&&... args) {
 		TrackerEvent* te = new T(std::forward<Targs>(args)...);
 		if (te != nullptr) {
 		    te->setTimeStamp(getTimestamp());
 		    te->setGameId(gameID);
-		    te->setSessionId(sessionID);
+		    te->setSessionId(sessionID);W
 		
 		    //TODO: string OR unsigned long int
 		    te->setUserId(userID);
 		}
 		
 		persistance->send(te);
-	}
+	}*/
 
 private:
 
 	Tracker(); 
 
-	~Tracker(); 
 	
 	/**
 	* time_t == long long

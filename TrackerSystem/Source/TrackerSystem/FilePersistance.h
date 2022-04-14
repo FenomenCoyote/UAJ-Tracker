@@ -9,7 +9,7 @@ class DllExport FilePersistance : public IPersistance
 public:
 
 	FilePersistance(ISerializer* s, char* filePath);
-	~FilePersistance();
+	virtual ~FilePersistance();
 
 	virtual void send(TrackerEvent* e);
 	virtual void flush();

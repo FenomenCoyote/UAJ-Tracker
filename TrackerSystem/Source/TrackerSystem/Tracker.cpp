@@ -19,6 +19,7 @@ Tracker::Tracker(): gameID(), sessionID(), userID(), persistance(nullptr)
 
 Tracker::~Tracker()
 {
+	delete persistance;
 }
 
 bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceType, SerializerType serializerType)
@@ -111,22 +112,32 @@ void Tracker::setStoragePath(const std::string& path)
 
 bool Tracker::Start()
 {
-    trackEvent<SessionStartEvent>();
+    trackEvent(new SessionStartEvent());
 
     return true;
 }
 
 bool Tracker::End()
 {
-    trackEvent<SessionEndEvent>();
+    trackEvent(new SessionEndEvent());
 
     persistance->flush();
+	
     return true;
 }
 
 void Tracker::flush()
 {
     persistance->flush();
+}
+
+void Tracker::trackEvent(TrackerEvent* e)
+{
+	e->setTimeStamp(getTimestamp());
+	e->setGameId(gameID);
+	e->setSessionId(sessionID); 
+	e->setUserId(userID);
+	persistance->send(e);
 }
 
 //template<typename T, typename ...Targs>

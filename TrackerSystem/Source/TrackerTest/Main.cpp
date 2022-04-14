@@ -16,20 +16,21 @@ int main(int argc, char *argv[]) {
 
 	a->Start();
 
-	a->trackEvent<UtensilBecomesDirtyEvent>();
-	a->trackEvent<DishFinishedEvent>();
+	a->trackEvent(new UtensilBecomesDirtyEvent());
+	a->trackEvent(new DishFinishedEvent());
 
 	//REVISAR ESTO CON LA FORMA DE MANDAR EVENTOS
-	a->trackEvent<IngredientKillEvent>(); // Escribe bien en json
+	a->trackEvent(new IngredientKillEvent()); // Escribe bien en json
 
-	IngredientKillEvent ingKill;	//No escribe bien en json
-	ingKill.setItemId(0);
-	ingKill.setMistake(true);
+	IngredientKillEvent* ingKill = new IngredientKillEvent();	//No escribe bien en json
+	ingKill->setItemId(0);
+	ingKill->setMistake(true);
 	a->trackEvent(ingKill);
 
 	a->End();
 
-	while(true){}
+	delete a;
+	//while(true){}
 
 	return 0;
 }   

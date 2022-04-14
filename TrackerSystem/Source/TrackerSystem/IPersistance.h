@@ -9,6 +9,7 @@ class DllExport IPersistance
 {
 public:
 	IPersistance(ISerializer* s);
+	virtual ~IPersistance() { delete _serializer; }
 
 	virtual void send(TrackerEvent* e) = 0;
 	virtual void flush() = 0;
