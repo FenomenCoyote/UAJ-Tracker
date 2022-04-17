@@ -7,11 +7,9 @@ public:
 	~AnimalCookingEvent();
 	virtual std::string toJson();
 
-	inline AnimalCookingEvent setLevelId(uint16_t level) {
+	inline AnimalCookingEvent* setLevelId(uint16_t level) {
 		_levelId = level;
-	}
-	inline AnimalCookingEvent setType(std::string eventType) {
-		_myType = eventType;
+		return this;
 	}
 
 protected:

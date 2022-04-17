@@ -16,12 +16,3 @@ std::string IngredientKillEvent::toJson()
 	return AnimalCookingEvent::toJson()  + ",\"mistake\":false";
 }
 
-bool IngredientKillEvent::getMistake() const
-{
-	return _mistake;
-}
-
-void IngredientKillEvent::setMistake(bool m)
-{
-	_mistake = m;
-}

@@ -98,5 +98,6 @@ private:
 	int sessionID;
 
 	IPersistance* persistance;
+
 };
 

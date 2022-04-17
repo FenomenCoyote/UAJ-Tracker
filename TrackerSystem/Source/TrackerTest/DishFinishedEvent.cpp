@@ -16,11 +16,3 @@ std::string DishFinishedEvent::toJson()
 	return AnimalCookingEvent::toJson() + ",\"result\": false";
 }
 
-bool DishFinishedEvent::getResult() const
-{
-	return false;
-}
-
-void DishFinishedEvent::setResult(bool m)
-{
-}

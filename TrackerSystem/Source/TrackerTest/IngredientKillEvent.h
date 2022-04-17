@@ -7,9 +7,14 @@ public:
 	~IngredientKillEvent();
 	virtual std::string toJson() override;
 	
-	bool getMistake() const;
+	bool getMistake() const {
+		return _mistake;
+	}
 
-	void setMistake(bool m);
+	IngredientKillEvent* setMistake(bool m) {
+		_mistake = m;
+		return this;
+	}
 private:
 	bool _mistake;
 };

@@ -61,6 +61,7 @@ bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceTy
         break;
     }
 
+
     return true;
 }
 
@@ -112,6 +113,28 @@ void Tracker::setStoragePath(const std::string& path)
 
 bool Tracker::Start()
 {
+    FILE* file;
+    std::ifstream f("sesion.txt");
+
+    if (f.good()) {
+        f.close();
+        fopen_s(&file, "sesion.txt", "r+");
+        fread(&sessionID, sizeof(int), 1, file);
+        sessionID++;
+    }
+    else {
+        f.close();
+        fopen_s(&file, "sesion.txt", "a");
+        fclose(file);
+        fopen_s(&file, "sesion.txt", "r+");
+    }
+
+    rewind(file);
+
+    fwrite(&sessionID, sizeof(int), 1, file);
+
+    fclose(file);
+
     trackEvent(new SessionStartEvent());
 
     return true;

@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[]) {
 
-	/*Tracker::Init();
+	Tracker::Init();
 
 	auto a = Tracker::Instance();
 
@@ -23,14 +23,14 @@ int main(int argc, char *argv[]) {
 	a->trackEvent(new IngredientKillEvent()); // Escribe bien en json
 
 	IngredientKillEvent* ingKill = new IngredientKillEvent();	//No escribe bien en json
-	ingKill->setItemId(0);
+	ingKill->setLevelId(0);
 	ingKill->setMistake(true);
 	a->trackEvent(ingKill);
 
 	a->End();
 
 	delete a;
-	//while(true){}*/
+	//while(true){}
 
 	return 0;
 }   

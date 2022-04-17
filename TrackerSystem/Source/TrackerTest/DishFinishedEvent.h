@@ -7,9 +7,12 @@ public:
 	~DishFinishedEvent();
 	virtual std::string toJson() override;
 
-	bool getResult() const;
+	bool getResult() const { return _result; };
 
-	void setResult(bool m);
+	AnimalCookingEvent* setResult(bool m) {
+		_result = m;
+		return this;
+	}
 private:
 	bool _result;
 };
