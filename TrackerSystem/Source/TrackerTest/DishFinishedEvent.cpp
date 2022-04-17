@@ -1,9 +1,8 @@
 #include "DishFinishedEvent.h"
 
-DishFinishedEvent::DishFinishedEvent() : _result(false)
+DishFinishedEvent::DishFinishedEvent() : AnimalCookingEvent(), _result(false)
 {
-	setEventId(5);
-	setItemType(itemType::Dish);
+	_myType = "DishFinishedEvent";
 }
 
 DishFinishedEvent::~DishFinishedEvent()
@@ -13,8 +12,8 @@ DishFinishedEvent::~DishFinishedEvent()
 std::string DishFinishedEvent::toJson()
 {
 	if (_result)
-		return GameEvent::toJson() + ",\"result\": true";
-	return GameEvent::toJson() + ",\"result\": false";
+		return AnimalCookingEvent::toJson() + ",\"result\": true";
+	return AnimalCookingEvent::toJson() + ",\"result\": false";
 }
 
 bool DishFinishedEvent::getResult() const

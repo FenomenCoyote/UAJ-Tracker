@@ -1,9 +1,8 @@
 #include "UtensilBecomesDirtyEvent.h"
 
-UtensilBecomesDirtyEvent::UtensilBecomesDirtyEvent()
+UtensilBecomesDirtyEvent::UtensilBecomesDirtyEvent() : AnimalCookingEvent()
 {
-	setEventId(8);
-	setItemType(itemType::Utensil);
+	_myType = "UtensilBecomesDirtyEvent";
 }
 
 UtensilBecomesDirtyEvent::~UtensilBecomesDirtyEvent()

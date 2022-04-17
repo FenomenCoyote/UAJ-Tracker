@@ -1,9 +1,8 @@
 #include "IngredientDespawnEvent.h"
 
-IngredientDespawnEvent::IngredientDespawnEvent()
+IngredientDespawnEvent::IngredientDespawnEvent() : AnimalCookingEvent()
 {
-	setEventId(6);
-	setItemType(itemType::Ingredient);
+	_myType = "IngredientDespawnEvent";
 }
 
 IngredientDespawnEvent::~IngredientDespawnEvent()

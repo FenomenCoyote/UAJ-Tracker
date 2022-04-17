@@ -1,9 +1,8 @@
 #include "UtensilCleanEvent.h"
 
-UtensilCleanEvent::UtensilCleanEvent()
+UtensilCleanEvent::UtensilCleanEvent() : AnimalCookingEvent()
 {
-	setEventId(9);
-	setItemType(itemType::Utensil);
+	_myType = "UtensilCleanEvent";
 }
 
 UtensilCleanEvent::~UtensilCleanEvent()

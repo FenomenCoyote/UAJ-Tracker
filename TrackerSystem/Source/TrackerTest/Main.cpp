@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[]) {
 
-	Tracker::Init();
+	/*Tracker::Init();
 
 	auto a = Tracker::Instance();
 
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 	a->End();
 
 	delete a;
-	//while(true){}
+	//while(true){}*/
 
 	return 0;
 }   

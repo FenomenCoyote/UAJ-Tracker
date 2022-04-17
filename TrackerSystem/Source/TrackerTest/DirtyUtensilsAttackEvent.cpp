@@ -1,9 +1,8 @@
 #include "DirtyUtensilsAttackEvent.h"
 
-DirtyUtensilsAttackEvent::DirtyUtensilsAttackEvent()
+DirtyUtensilsAttackEvent::DirtyUtensilsAttackEvent() : AnimalCookingEvent()
 {
-	setEventId(4);
-	setItemType(itemType::Utensil);
+	_myType = "DirtyUtensilsAttackEvent";
 }
 
 DirtyUtensilsAttackEvent::~DirtyUtensilsAttackEvent()

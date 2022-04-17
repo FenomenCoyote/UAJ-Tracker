@@ -1,9 +1,8 @@
 #include "IngredientKillEvent.h"
 
-IngredientKillEvent::IngredientKillEvent(): _mistake(false)
+IngredientKillEvent::IngredientKillEvent(): AnimalCookingEvent(), _mistake(false)
 {
-	setEventId(7);
-	setItemType(itemType::Ingredient);
+	_myType = "IngredientKillEvent";
 }
 
 IngredientKillEvent::~IngredientKillEvent()
