@@ -2,11 +2,6 @@
 #include <iostream>
 #include <chrono>
 #include "defines.h"
-#include <iostream>
-#include "rapidjson/writer.h"
-#include "rapidjson/document.h"
-#include "rapidjson/stringbuffer.h"
-#include <iostream>
 #include <string>
 
 class DllExport TrackerEvent {

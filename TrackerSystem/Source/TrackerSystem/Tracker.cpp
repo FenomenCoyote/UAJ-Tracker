@@ -22,13 +22,13 @@ Tracker::~Tracker()
 	delete persistance;
 }
 
-bool Tracker::Init(const std::string& storageDir, PersistanceType persistanceType, SerializerType serializerType)
+bool Tracker::Init(const std::string& storageDir, PersistanceType persistanceType, SerializerType serializerType, int nEventsToFlush)
 {
     assert(instance == nullptr);
 
     //Inicializa la instancia
     instance = new Tracker();
-
+    
     //Obtención del numero de sesion del fichero
     FILE* file;
     std::ifstream f("sesion.txt");
@@ -50,6 +50,9 @@ bool Tracker::Init(const std::string& storageDir, PersistanceType persistanceTyp
     //Se escribe la nueva sesion en el fichero
     fwrite(&instance->sessionID, sizeof(int), 1, file);
     fclose(file);
+
+    instance->maxEventsToFlush = nEventsToFlush;
+    instance->nEventsWithoutFlush = 0;
 
     //Se crea el serializador del tipo especificado
     ISerializer* ser;
@@ -164,6 +167,11 @@ void Tracker::trackEvent(TrackerEvent* e)
 	e->setSessionId(sessionID); 
 	e->setUserId(userID);
 	persistance->send(e);
+    nEventsWithoutFlush++;
+    if (nEventsWithoutFlush >= maxEventsToFlush) {
+        flush();
+        nEventsWithoutFlush = 0;
+    }
 }
 
 time_t Tracker::getTimestamp()

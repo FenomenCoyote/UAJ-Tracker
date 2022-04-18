@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "TrackerEvent.h"
 
-using namespace rapidjson;
-
 TrackerEvent::TrackerEvent(): _timeStamp(0), _userId(0), _sessionId(0), _gameId(0)
 {
 }
