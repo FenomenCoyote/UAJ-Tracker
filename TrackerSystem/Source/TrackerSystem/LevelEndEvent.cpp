@@ -3,7 +3,7 @@
 
 LevelEndEvent::LevelEndEvent(): _levelWin(false)
 {
-	setEventId(2);
+	_myType = "LevelEndEvent";
 }
 
 LevelEndEvent::~LevelEndEvent()

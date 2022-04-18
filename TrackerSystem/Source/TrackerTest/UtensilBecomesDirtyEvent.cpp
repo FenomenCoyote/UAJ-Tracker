@@ -1,6 +1,6 @@
 #include "UtensilBecomesDirtyEvent.h"
 
-UtensilBecomesDirtyEvent::UtensilBecomesDirtyEvent() : AnimalCookingEvent()
+UtensilBecomesDirtyEvent::UtensilBecomesDirtyEvent() : GameEvent()
 {
 	_myType = "UtensilBecomesDirtyEvent";
 }
@@ -11,5 +11,5 @@ UtensilBecomesDirtyEvent::~UtensilBecomesDirtyEvent()
 
 std::string UtensilBecomesDirtyEvent::toJson()
 {
-	return AnimalCookingEvent::toJson() + "},";
+	return GameEvent::toJson() + "},";
 }

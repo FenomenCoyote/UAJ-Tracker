@@ -1,6 +1,6 @@
 #include "DishFinishedEvent.h"
 
-DishFinishedEvent::DishFinishedEvent() : AnimalCookingEvent(), _result(false)
+DishFinishedEvent::DishFinishedEvent() : GameEvent(), _result(false)
 {
 	_myType = "DishFinishedEvent";
 }
@@ -12,7 +12,7 @@ DishFinishedEvent::~DishFinishedEvent()
 std::string DishFinishedEvent::toJson()
 {
 	if (_result)
-		return AnimalCookingEvent::toJson() + ",\"result\": true },";
-	return AnimalCookingEvent::toJson() + ",\"result\": false },";
+		return GameEvent::toJson() + ",\"result\": true },";
+	return GameEvent::toJson() + ",\"result\": false },";
 }
 

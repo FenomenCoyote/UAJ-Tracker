@@ -3,7 +3,7 @@
 
 using namespace rapidjson;
 
-TrackerEvent::TrackerEvent(): _timeStamp(0), _userId(0), _sessionId(0), _gameId(0), _eventId(0)
+TrackerEvent::TrackerEvent(): _timeStamp(0), _userId(0), _sessionId(0), _gameId(0)
 {
 }
 
@@ -17,7 +17,7 @@ std::string TrackerEvent::toJson()
         ",\"userId\":" + std::to_string(_userId) +
         ",\"sessionId\":" + std::to_string(_sessionId) +
         ",\"gameId\":" + std::to_string(_gameId) +
-        ",\"eventId\":" + std::to_string(_eventId) ;
+		",\"eventType\":" + "\"" + _myType + "\"";
     return json;
 }
 
@@ -41,12 +41,6 @@ uint8_t TrackerEvent::getGameId() const
 	return _gameId;
 }
 
-uint8_t TrackerEvent::getEventId() const
-{
-	return _eventId;
-}
-
-
 void TrackerEvent::setTimeStamp(int tS)
 {
 	_timeStamp = tS;
@@ -65,9 +59,4 @@ void TrackerEvent::setSessionId(unsigned short int sI)
 void TrackerEvent::setGameId(uint8_t gI)
 {
 	_gameId = gI;
-}
-
-void TrackerEvent::setEventId(uint8_t eI)
-{
-	_eventId = eI;
 }

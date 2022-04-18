@@ -1,6 +1,6 @@
 #include "IngredientKillEvent.h"
 
-IngredientKillEvent::IngredientKillEvent(): AnimalCookingEvent(), _mistake(false)
+IngredientKillEvent::IngredientKillEvent() : GameEvent(), _mistake(false)
 {
 	_myType = "IngredientKillEvent";
 }
@@ -12,7 +12,7 @@ IngredientKillEvent::~IngredientKillEvent()
 std::string IngredientKillEvent::toJson()
 {
 	if(_mistake)
-		return AnimalCookingEvent::toJson() + ",\"mistake\":true },";
-	return AnimalCookingEvent::toJson()  + ",\"mistake\":false },";
+		return GameEvent::toJson() + ",\"mistake\":true },";
+	return GameEvent::toJson()  + ",\"mistake\":false },";
 }
 

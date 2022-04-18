@@ -42,9 +42,6 @@
     <ClCompile Include="..\..\Source\TrackerTest\UtensilCleanEvent.cpp">
       <Filter>Archivos de origen\AnimalCookingEvents</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TrackerTest\AnimalCookingEvent.cpp">
-      <Filter>Archivos de origen\AnimalCookingEvents</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\TrackerTest\UtensilBecomesDirtyEvent.h">
@@ -63,9 +60,6 @@
       <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TrackerTest\IngredientKillEvent.h">
-      <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TrackerTest\AnimalCookingEvent.h">
       <Filter>Archivos de encabezado\AnimalCookingEvents</Filter>
     </ClInclude>
   </ItemGroup>

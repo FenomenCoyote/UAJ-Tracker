@@ -3,7 +3,7 @@
 
 LevelStartEvent::LevelStartEvent()
 {
-	setEventId(1);
+	_myType = "LevelStartEvent";
 }
 
 LevelStartEvent::~LevelStartEvent()

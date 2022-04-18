@@ -1,6 +1,6 @@
 #include "UtensilCleanEvent.h"
 
-UtensilCleanEvent::UtensilCleanEvent() : AnimalCookingEvent()
+UtensilCleanEvent::UtensilCleanEvent() : GameEvent()
 {
 	_myType = "UtensilCleanEvent";
 }
@@ -11,5 +11,5 @@ UtensilCleanEvent::~UtensilCleanEvent()
 
 std::string UtensilCleanEvent::toJson()
 {
-	return AnimalCookingEvent::toJson() + "},";
+	return GameEvent::toJson() + "},";
 }

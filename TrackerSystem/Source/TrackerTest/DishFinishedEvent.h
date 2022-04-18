@@ -1,7 +1,7 @@
 #pragma once
-#include "AnimalCookingEvent.h"
+#include "GameEvent.h"
 
-class DishFinishedEvent : public AnimalCookingEvent {
+class DishFinishedEvent : public GameEvent {
 public:
 	DishFinishedEvent();
 	~DishFinishedEvent();
@@ -9,7 +9,7 @@ public:
 
 	bool getResult() const { return _result; };
 
-	AnimalCookingEvent* setResult(bool m) {
+	DishFinishedEvent* setResult(bool m) {
 		_result = m;
 		return this;
 	}

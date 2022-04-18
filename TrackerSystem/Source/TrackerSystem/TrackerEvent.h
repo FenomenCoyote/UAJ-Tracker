@@ -41,17 +41,18 @@ public:
 	uint64_t getUserId() const;
 	unsigned short int getSessionId() const;
 	uint8_t getGameId() const;
-	uint8_t getEventId() const;
 
 	void setTimeStamp(int tS);
 	void setUserId(uint64_t uI);
 	void setSessionId(unsigned short int sI);
 	void setGameId(uint8_t gI);
-	void setEventId(uint8_t eI);
+
 private:
 	int _timeStamp;
 	uint64_t _userId;
 	unsigned short int _sessionId;
 	uint8_t _gameId;
-	uint8_t _eventId;
+
+protected:
+	std::string _myType;
 };

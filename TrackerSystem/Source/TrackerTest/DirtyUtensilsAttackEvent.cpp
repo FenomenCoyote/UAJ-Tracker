@@ -1,6 +1,6 @@
 #include "DirtyUtensilsAttackEvent.h"
 
-DirtyUtensilsAttackEvent::DirtyUtensilsAttackEvent() : AnimalCookingEvent()
+DirtyUtensilsAttackEvent::DirtyUtensilsAttackEvent() : GameEvent()
 {
 	_myType = "DirtyUtensilsAttackEvent";
 }
@@ -11,5 +11,5 @@ DirtyUtensilsAttackEvent::~DirtyUtensilsAttackEvent()
 
 std::string DirtyUtensilsAttackEvent::toJson()
 {
-	return  AnimalCookingEvent::toJson() + "},";
+	return  GameEvent::toJson() + "},";
 }

@@ -159,7 +159,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\TrackerTest\AnimalCookingEvent.cpp" />
     <ClCompile Include="..\..\Source\TrackerTest\DirtyUtensilsAttackEvent.cpp" />
     <ClCompile Include="..\..\Source\TrackerTest\DishFinishedEvent.cpp" />
     <ClCompile Include="..\..\Source\TrackerTest\IngredientDespawnEvent.cpp" />
@@ -169,7 +168,6 @@
     <ClCompile Include="..\..\Source\TrackerTest\UtensilCleanEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\TrackerTest\AnimalCookingEvent.h" />
     <ClInclude Include="..\..\Source\TrackerTest\DirtyUtensilsAttackEvent.h" />
     <ClInclude Include="..\..\Source\TrackerTest\DishFinishedEvent.h" />
     <ClInclude Include="..\..\Source\TrackerTest\IngredientDespawnEvent.h" />

@@ -3,7 +3,7 @@
 
 SessionStartEvent::SessionStartEvent()
 {
-	setEventId(0);
+	_myType = "SessionStartEvent";
 }
 
 SessionStartEvent::~SessionStartEvent()

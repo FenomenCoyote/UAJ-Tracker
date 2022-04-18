@@ -1,6 +1,6 @@
 #include "IngredientDespawnEvent.h"
 
-IngredientDespawnEvent::IngredientDespawnEvent() : AnimalCookingEvent()
+IngredientDespawnEvent::IngredientDespawnEvent() : GameEvent()
 {
 	_myType = "IngredientDespawnEvent";
 }
@@ -11,5 +11,5 @@ IngredientDespawnEvent::~IngredientDespawnEvent()
 
 std::string IngredientDespawnEvent::toJson()
 {
-	return AnimalCookingEvent::toJson() + "},";
+	return GameEvent::toJson() + "},";
 }

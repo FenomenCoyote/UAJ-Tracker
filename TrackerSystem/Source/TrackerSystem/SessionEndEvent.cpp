@@ -3,7 +3,7 @@
 
 SessionEndEvent::SessionEndEvent()
 {
-	setEventId(255);
+	_myType = "SessionEndEvent";
 }
 
 SessionEndEvent::~SessionEndEvent()
