@@ -24,7 +24,7 @@ public:
 	 * @return true when all good
 	 * @return false when something bad happened
 	 */
-	static bool Init(const std::string& storagePath = "./data.json", PersistanceType persistanceType = PersistanceType::FilePersistance_, SerializerType serializerType = SerializerType::JSON_);
+	static bool Init(const std::string& storagePath = "./", PersistanceType persistanceType = PersistanceType::FilePersistance_, SerializerType serializerType = SerializerType::JSON_);
 
 	inline static Tracker* Instance() {
 		assert(instance != nullptr);

@@ -7,6 +7,12 @@
 FilePersistance::FilePersistance(ISerializer* s, char* filePath): IPersistance(s), _filePath(filePath), _eventQueue1(), _eventQueue2(), _flushRequested(false), _threadActive(true)
 {
 	_activeQueue = &_eventQueue1;
+	
+	FILE* file;
+	fopen_s(&file, _filePath, "a");
+	std::string aux = s->startSyntax();
+	fwrite(aux.c_str(), aux.length(), 1, file);
+	fclose(file);
 
 	_thread = new std::thread(&FilePersistance::flushQueue, this);
 }
@@ -21,6 +27,12 @@ FilePersistance::~FilePersistance()
 		writeQueue(_eventQueue1);
 	if (!_eventQueue2.empty())
 		writeQueue(_eventQueue2);
+
+	FILE* file;
+	fopen_s(&file, _filePath, "a");
+	std::string aux = _serializer->endSyntax();
+	fwrite(aux.c_str(), aux.length(), 1, file);
+	fclose(file);
 
 	delete _filePath;
 }

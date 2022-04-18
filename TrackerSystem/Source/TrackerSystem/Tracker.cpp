@@ -28,6 +28,25 @@ bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceTy
 
     instance = new Tracker();
 
+    FILE* file;
+    std::ifstream f("sesion.txt");
+
+    if (f.good()) {
+        f.close();
+        fopen_s(&file, "sesion.txt", "r+");
+        fread(&instance->sessionID, sizeof(int), 1, file);
+        instance->sessionID++;
+    }
+    else {
+        f.close();
+        fopen_s(&file, "sesion.txt", "a");
+        fclose(file);
+        fopen_s(&file, "sesion.txt", "r+");
+    }
+    rewind(file);
+    fwrite(&instance->sessionID, sizeof(int), 1, file);
+    fclose(file);
+
     ISerializer* ser;
 
     switch (serializerType)
@@ -45,22 +64,34 @@ bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceTy
         break;
     }
 
-    char* buffer = new char[storagePath.length() + 1];
-    strcpy_s(buffer, storagePath.length() + 1, storagePath.c_str());
-
     switch (persistanceType)
     {
-    case Tracker::FilePersistance_:
-        instance->persistance = new FilePersistance(ser, buffer);
-        break;
-    case Tracker::ServerPersistance_:
-        instance->persistance = new ServerPersistance(ser, buffer);
-        break;
-    default:
-        instance->persistance = new FilePersistance(ser, buffer);
-        break;
-    }
+    case Tracker::FilePersistance_: {
 
+            std::string path = storagePath + "sesion" + std::to_string(instance->sessionID);
+            char* buff = new char[path.length() + 1];
+            strcpy_s(buff, path.size() + 1, path.c_str());
+            instance->persistance = new FilePersistance(ser, buff);
+
+            break;
+        }
+    case Tracker::ServerPersistance_:{
+            std::string path = "server";
+            char* buff = nullptr;
+            strcpy_s(buff, path.size(), path.c_str());
+            instance->persistance = new ServerPersistance(ser, buff);
+            break;
+        }
+    default: {
+
+            std::string path = storagePath + "sesion" + std::to_string(instance->sessionID);
+            char* buff = new char[path.length() + 1];
+            strcpy_s(buff, path.size() + 1, path.c_str());
+            instance->persistance = new FilePersistance(ser, buff);
+
+            break;
+        }
+    }
 
     return true;
 }
@@ -113,27 +144,7 @@ void Tracker::setStoragePath(const std::string& path)
 
 bool Tracker::Start()
 {
-    FILE* file;
-    std::ifstream f("sesion.txt");
-
-    if (f.good()) {
-        f.close();
-        fopen_s(&file, "sesion.txt", "r+");
-        fread(&sessionID, sizeof(int), 1, file);
-        sessionID++;
-    }
-    else {
-        f.close();
-        fopen_s(&file, "sesion.txt", "a");
-        fclose(file);
-        fopen_s(&file, "sesion.txt", "r+");
-    }
-
-    rewind(file);
-
-    fwrite(&sessionID, sizeof(int), 1, file);
-
-    fclose(file);
+    
 
     trackEvent(new SessionStartEvent());
 

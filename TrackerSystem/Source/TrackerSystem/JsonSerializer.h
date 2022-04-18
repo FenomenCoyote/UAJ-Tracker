@@ -4,5 +4,8 @@
 class DllExport JsonSerializer: public ISerializer
 {
 	virtual std::string serialize(TrackerEvent* e);
+
+	virtual std::string startSyntax() override;
+	virtual std::string endSyntax() override;
 };
 
