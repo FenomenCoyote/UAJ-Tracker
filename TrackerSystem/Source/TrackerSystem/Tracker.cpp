@@ -22,57 +22,55 @@ Tracker::~Tracker()
 	delete persistance;
 }
 
-bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceType, SerializerType serializerType)
+bool Tracker::Init(const std::string& storageDir, PersistanceType persistanceType, SerializerType serializerType)
 {
     assert(instance == nullptr);
 
+    //Inicializa la instancia
     instance = new Tracker();
 
+    //Obtención del numero de sesion del fichero
     FILE* file;
     std::ifstream f("sesion.txt");
-
-    if (f.good()) {
+    if (f.good()) { //Si ya existe el fichero
         f.close();
         fopen_s(&file, "sesion.txt", "r+");
         fread(&instance->sessionID, sizeof(int), 1, file);
-        instance->sessionID++;
+        instance->sessionID++; //la sesión es la siguiente a la ultima
     }
-    else {
+    else { //Si no existe el fichero
         f.close();
+        //Se crea el fichero
         fopen_s(&file, "sesion.txt", "a");
         fclose(file);
         fopen_s(&file, "sesion.txt", "r+");
+        instance->sessionID = 0; //la sesión es la primera
     }
     rewind(file);
+    //Se escribe la nueva sesion en el fichero
     fwrite(&instance->sessionID, sizeof(int), 1, file);
     fclose(file);
 
+    //Se crea el serializador del tipo especificado
     ISerializer* ser;
-
     switch (serializerType)
     {
     case Tracker::JSON_:
         ser = new JsonSerializer();
-     /*   auto jser = static_cast<JsonSerializer*>(ser);
-        if (jser != nullptr) jser->init();*/
-
         break;
     default:
         ser = new JsonSerializer();
-        /*auto jser = static_cast<JsonSerializer*>(ser);
-        if (jser != nullptr) jser->init();*/
         break;
     }
 
+    //Se crea  el persistance del tipo especificado
     switch (persistanceType)
     {
     case Tracker::FilePersistance_: {
-
-            std::string path = storagePath + "sesion" + std::to_string(instance->sessionID);
+            std::string path = storageDir + "sesion" + std::to_string(instance->sessionID);
             char* buff = new char[path.length() + 1];
             strcpy_s(buff, path.size() + 1, path.c_str());
             instance->persistance = new FilePersistance(ser, buff);
-
             break;
         }
     case Tracker::ServerPersistance_:{
@@ -82,13 +80,11 @@ bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceTy
             instance->persistance = new ServerPersistance(ser, buff);
             break;
         }
-    default: {
-
-            std::string path = storagePath + "sesion" + std::to_string(instance->sessionID);
+    default: { //En el caso por defecto se usa file persistance
+            std::string path = storageDir + "sesion" + std::to_string(instance->sessionID);
             char* buff = new char[path.length() + 1];
             strcpy_s(buff, path.size() + 1, path.c_str());
             instance->persistance = new FilePersistance(ser, buff);
-
             break;
         }
     }
@@ -96,10 +92,10 @@ bool Tracker::Init(const std::string& storagePath, PersistanceType persistanceTy
     return true;
 }
 
-void Tracker::setUserID(const uint16_t userNameID)
+void Tracker::setUserID()
 {
-std::string line;
-
+    //Obtencion de la direccion MAC del usuario
+    std::string line;
 #if _WIN32
     std::string cmd = "getmac /nh";
     std::string filename = "macaddress.txt";
@@ -120,6 +116,7 @@ std::string line;
 
     userID = 0;
 
+    //Se copia la direccion a un entero sin signo
     for (int i = 0; i < line.length(); i += 2)
     {
         char c1 = line[i], c2 = line[i + 1];
@@ -131,7 +128,8 @@ std::string line;
         userID = userID | (byte << (4 * i) + 16);
     }
 
-    userID = userID | userNameID;
+    //Se combina el id del ususario recibido con la direccion MAC
+    userID = userID;
 }
 
 void Tracker::setStoragePath(const std::string& path)
@@ -142,22 +140,16 @@ void Tracker::setStoragePath(const std::string& path)
     persistance->setPath(buffer);
 }
 
-bool Tracker::Start()
+void Tracker::Start()
 {
-    
-
+    setUserID();
     trackEvent(new SessionStartEvent());
-
-    return true;
 }
 
-bool Tracker::End()
+void Tracker::End()
 {
     trackEvent(new SessionEndEvent());
-
     persistance->flush();
-	
-    return true;
 }
 
 void Tracker::flush()
@@ -173,23 +165,6 @@ void Tracker::trackEvent(TrackerEvent* e)
 	e->setUserId(userID);
 	persistance->send(e);
 }
-
-//template<typename T, typename ...Targs>
-//void Tracker::trackEvent(Targs&&... args)
-//{
-//    TrackerEvent* te = new T(std::forward<Targs>(args)...);
-//
-//    if (te != nullptr) {
-//        te->setTimeStamp(getTimestamp());
-//        te->setGameId(gameID);
-//        te->setSessionId(sessionID);
-//
-//        //TODO: string OR unsigned long int
-//        te->setUserId(userID);
-//    }
-//
-//    persistance->send(te);
-//}
 
 time_t Tracker::getTimestamp()
 {

@@ -8,6 +8,7 @@ FilePersistance::FilePersistance(ISerializer* s, char* filePath): IPersistance(s
 {
 	_activeQueue = &_eventQueue1;
 	
+	//Se inicia la estructura del fichero segun el formato
 	FILE* file;
 	fopen_s(&file, _filePath, "a");
 	std::string aux = s->startSyntax();
@@ -23,11 +24,13 @@ FilePersistance::~FilePersistance()
 
 	_thread->join();
 
+	//Se vacian ambas colas 
 	if (!_eventQueue1.empty())
 		writeQueue(_eventQueue1);
 	if (!_eventQueue2.empty())
 		writeQueue(_eventQueue2);
 
+	//Se termina la estructura del fichero segun el formato
 	FILE* file;
 	fopen_s(&file, _filePath, "a");
 	std::string aux = _serializer->endSyntax();
@@ -61,16 +64,20 @@ void FilePersistance::setPath(char* path)
 	delete _filePath;
 	_filePath = path;
 }
-
+ 
 void FilePersistance::flushQueue()
 {
+	//Mientras el hilo esta activo (de inicio a fin del tracker)
 	while (_threadActive) {
+		//Cuando hay una peticion de flush
+		//Serializa la cola que toca
 		if (_flushRequested) {
 			if (_activeQueue == &_eventQueue2)
 				writeQueue(_eventQueue1);
 			else 
 				writeQueue(_eventQueue2);
 
+			//Se puede hacer una nueva peticion de flush
 			_flushRequested = false;
 		}
 	}
@@ -78,19 +85,22 @@ void FilePersistance::flushQueue()
 
 void FilePersistance::writeQueue(std::queue<TrackerEvent*>& queue)
 {
+	//Abre el fichero
 	FILE* file;
 	fopen_s(&file,_filePath, "a");
 
+	//Mientras queden eventos que serializar
 	while (!queue.empty()) {
 		TrackerEvent* e = queue.front();	queue.pop();
 
+		//Obtiene el evento serializado
 		std::string aux = _serializer->serialize(e);
-		
+		//Lo escribe en el fichero de persistencia
 		fwrite(aux.c_str(), aux.length(), 1, file);
 
 		delete e;
 	}
-
+	//Cierra el fichero
 	fclose(file);
 }
 

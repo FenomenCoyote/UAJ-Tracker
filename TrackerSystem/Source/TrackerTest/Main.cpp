@@ -12,8 +12,6 @@ int main(int argc, char *argv[]) {
 
 	auto a = Tracker::Instance();
 
-	a->setUserID(1);
-
 	a->Start();
 
 	a->trackEvent(new UtensilBecomesDirtyEvent());

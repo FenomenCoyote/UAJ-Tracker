@@ -9,34 +9,17 @@
 #include <iostream>
 #include <string>
 
-/* 
-userId: 
-	- 2 bytes: user code
-	- 6 bytes: mac code (12 hexadecimal - 4 bits per hexadecimal)
-
-sessionId:	
-	- 2 bytes: 65.500 sessions aprox (1 time every day during 178 years) 
-
-gameId:
-	- 1 byte: 255 different games
-
-eventId:
-	- 1 byte: 255 different events
-
-json structure: 
-	- timeStamp		
-	- userId
-	- sessionId
-	- gameId
-	- eventId
-*/
-
 class DllExport TrackerEvent {
 public:
 	TrackerEvent();
 	~TrackerEvent();
+
+	/// <summary>
+	/// Dvuelve la clase en formato Json
+	/// </summary>
 	virtual std::string toJson();
 	
+
 	int getTimeStamp() const;
 	uint64_t getUserId() const;
 	unsigned short int getSessionId() const;
