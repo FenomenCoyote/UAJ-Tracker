@@ -12,7 +12,7 @@ LevelEndEvent::~LevelEndEvent()
 
 std::string LevelEndEvent::toJson()
 {
-	return GameEvent::toJson() + ",\"levelWin\":" + std::to_string(_levelWin);
+	return GameEvent::toJson() + ",\"levelWin\":" + std::to_string(_levelWin) + "},";
 }
 
 bool LevelEndEvent::getLevelWin() const

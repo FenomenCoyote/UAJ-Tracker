@@ -1,19 +1,14 @@
 #pragma once
-#include "TrackerEvent.h"
+#include "GameEvent.h"
 
-class AnimalCookingEvent: public TrackerEvent {
+class AnimalCookingEvent: public GameEvent {
 public:
 	AnimalCookingEvent();
 	~AnimalCookingEvent();
-	virtual std::string toJson();
 
-	inline AnimalCookingEvent* setLevelId(uint16_t level) {
-		_levelId = level;
-		return this;
-	}
+	virtual std::string toJson();
 
 protected:
 	std::string _myType;
-	uint16_t _levelId;
 };
 

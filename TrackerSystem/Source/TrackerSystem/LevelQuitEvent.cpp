@@ -9,3 +9,8 @@ LevelQuitEvent::LevelQuitEvent()
 LevelQuitEvent::~LevelQuitEvent()
 {
 }
+
+std::string LevelQuitEvent::toJson()
+{
+	return GameEvent::toJson() + "},";
+}

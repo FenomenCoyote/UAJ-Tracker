@@ -12,7 +12,7 @@ IngredientKillEvent::~IngredientKillEvent()
 std::string IngredientKillEvent::toJson()
 {
 	if(_mistake)
-		return AnimalCookingEvent::toJson() + ",\"mistake\":true";
-	return AnimalCookingEvent::toJson()  + ",\"mistake\":false";
+		return AnimalCookingEvent::toJson() + ",\"mistake\":true },";
+	return AnimalCookingEvent::toJson()  + ",\"mistake\":false },";
 }
 

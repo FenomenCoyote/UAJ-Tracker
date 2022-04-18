@@ -9,3 +9,8 @@ SessionStartEvent::SessionStartEvent()
 SessionStartEvent::~SessionStartEvent()
 {
 }
+
+std::string SessionStartEvent::toJson()
+{
+	return TrackerEvent::toJson() + "},";
+}

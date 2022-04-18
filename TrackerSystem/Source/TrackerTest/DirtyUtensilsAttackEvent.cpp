@@ -8,3 +8,8 @@ DirtyUtensilsAttackEvent::DirtyUtensilsAttackEvent() : AnimalCookingEvent()
 DirtyUtensilsAttackEvent::~DirtyUtensilsAttackEvent()
 {
 }
+
+std::string DirtyUtensilsAttackEvent::toJson()
+{
+	return  AnimalCookingEvent::toJson() + "},";
+}

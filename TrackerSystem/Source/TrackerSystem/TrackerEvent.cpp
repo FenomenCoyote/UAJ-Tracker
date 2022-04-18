@@ -13,36 +13,7 @@ TrackerEvent::~TrackerEvent()
 
 std::string TrackerEvent::toJson()
 {  
-    //METHOD1 
-    //StringBuffer s;
-    //Writer<StringBuffer> writer(s);    
-    //writer.StartObject();             
-    //writer.Key("timeStamp");              
-    //writer.Int(_timeStamp);           
-
-    //writer.Key("eventId");
-    //writer.Uint(_eventId);
-
-    //writer.Key("gameId");
-    //writer.Uint(1);
-
-    //writer.Key("userId");
-    //writer.Uint64(245);
-
-    //writer.Key("sessionId");
-    //writer.Int(_sessionId);
- 
-    //writer.EndObject();    
-    //std::cout << s.GetString() << std::endl;    
-    //return s.GetString();
-
-    //METHOD2 
-    //const char* json = "{ \"hello\" : \"world\", \"t\" : true , \"f\" : false, \"n\": null, \"i\":123, \"pi\": 3.1416, \"a\":[1, 2, 3, 4] }"; 
-    //printf("Original JSON:\n %s\n", json);
-    //return json;
-
-    //METHOD3
-    std::string json = "\"timeStamp\":" + std::to_string(_timeStamp) +        
+    std::string json = "{\"timeStamp\":" + std::to_string(_timeStamp) +        
         ",\"userId\":" + std::to_string(_userId) +
         ",\"sessionId\":" + std::to_string(_sessionId) +
         ",\"gameId\":" + std::to_string(_gameId) +

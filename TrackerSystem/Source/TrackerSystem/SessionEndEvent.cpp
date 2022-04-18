@@ -9,3 +9,8 @@ SessionEndEvent::SessionEndEvent()
 SessionEndEvent::~SessionEndEvent()
 {
 }
+
+std::string SessionEndEvent::toJson()
+{
+	return TrackerEvent::toJson() + "}";
+}

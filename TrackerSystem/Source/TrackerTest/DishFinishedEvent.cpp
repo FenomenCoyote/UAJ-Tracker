@@ -12,7 +12,7 @@ DishFinishedEvent::~DishFinishedEvent()
 std::string DishFinishedEvent::toJson()
 {
 	if (_result)
-		return AnimalCookingEvent::toJson() + ",\"result\": true";
-	return AnimalCookingEvent::toJson() + ",\"result\": false";
+		return AnimalCookingEvent::toJson() + ",\"result\": true },";
+	return AnimalCookingEvent::toJson() + ",\"result\": false },";
 }
 

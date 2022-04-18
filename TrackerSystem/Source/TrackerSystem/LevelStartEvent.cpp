@@ -9,3 +9,8 @@ LevelStartEvent::LevelStartEvent()
 LevelStartEvent::~LevelStartEvent()
 {
 }
+
+std::string LevelStartEvent::toJson()
+{
+	return GameEvent::toJson() + "},";
+}

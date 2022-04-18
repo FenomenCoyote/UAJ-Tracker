@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "GameEvent.h"
 
-GameEvent::GameEvent(): _levelId(0)
+GameEvent::GameEvent(): TrackerEvent(), _levelId(0)
 {
 }
 

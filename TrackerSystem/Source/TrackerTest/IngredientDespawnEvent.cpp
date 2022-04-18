@@ -8,3 +8,8 @@ IngredientDespawnEvent::IngredientDespawnEvent() : AnimalCookingEvent()
 IngredientDespawnEvent::~IngredientDespawnEvent()
 {
 }
+
+std::string IngredientDespawnEvent::toJson()
+{
+	return AnimalCookingEvent::toJson() + "},";
+}

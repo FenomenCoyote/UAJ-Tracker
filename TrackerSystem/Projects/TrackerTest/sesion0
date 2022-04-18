@@ -1,0 +1,9 @@
+[
+{"timeStamp":1650290861,"userId":7907303256589336577,"sessionId":0,"gameId":0,"eventId":0},
+{"timeStamp":1650290861,"userId":7907303256589336577,"sessionId":0,"gameId":0,"eventId":0,"_myType": "UtensilBecomesDirtyEvent"},
+{"timeStamp":1650290861,"userId":7907303256589336577,"sessionId":0,"gameId":0,"eventId":0,"_myType": "DishFinishedEvent","result": false },
+{"timeStamp":1650290861,"userId":7907303256589336577,"sessionId":0,"gameId":0,"eventId":0,"_myType": "IngredientKillEvent","mistake":false },
+{"timeStamp":1650290861,"userId":7907303256589336577,"sessionId":0,"gameId":0,"eventId":0,"_myType": "IngredientKillEvent","mistake":true },
+{"timeStamp":1650290861,"userId":7907303256589336577,"sessionId":0,"gameId":0,"eventId":255}
+
+]

@@ -8,3 +8,8 @@ UtensilBecomesDirtyEvent::UtensilBecomesDirtyEvent() : AnimalCookingEvent()
 UtensilBecomesDirtyEvent::~UtensilBecomesDirtyEvent()
 {
 }
+
+std::string UtensilBecomesDirtyEvent::toJson()
+{
+	return AnimalCookingEvent::toJson() + "},";
+}
