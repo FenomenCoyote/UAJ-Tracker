@@ -19,6 +19,7 @@ public:
 	uint64_t getUserId() const;
 	unsigned short int getSessionId() const;
 	uint8_t getGameId() const;
+	std::string getType() const;
 
 	void setTimeStamp(int tS);
 	void setUserId(uint64_t uI);
