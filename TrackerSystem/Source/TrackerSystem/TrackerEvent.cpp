@@ -41,6 +41,11 @@ uint8_t TrackerEvent::getGameId() const
 	return _gameId;
 }
 
+std::string TrackerEvent::getType() const
+{
+	return _myType;
+}
+
 void TrackerEvent::setTimeStamp(int tS)
 {
 	_timeStamp = tS;
